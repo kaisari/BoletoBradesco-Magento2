@@ -25,6 +25,9 @@
                 <field id="secret" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Chave de Segurança</label>
                 </field>
+                <field id="user" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Usuário API</label>
+                </field>
                 <field id="beneficiario" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Nome do beneficiário</label>
                 </field>

@@ -18,12 +18,18 @@ class Heading extends Field {
     private $moduleConfig;
 
     /**
+     * @var StoreManagerInterface
+     */
+    protected $_storeManager;
+
+    /**
      * Activation constructor.
      *
      * @param Context $context
      * @param mixed[] $data
      */
-    public function __construct(Context $context, array $data = []) {
+    public function __construct(Context $context, \Magento\Store\Model\StoreManagerInterface $storeManager, array $data = []) {
+        $this->_storeManager = $storeManager;
         parent::__construct($context, $data);
     }
 
@@ -41,7 +47,10 @@ class Heading extends Field {
             $this->_renderValue($element)
         );
 
-        return $this->_decorateRowHtml($element, $html);
+        $url = $this->_storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_WEB) . 'boletobradesco/order/update';
+        $url = "<p><b>URL de confirmação do pedido:</b> {$url}</p>";
+
+        return $this->_decorateRowHtml($element, $html).$url;
     }
 
     /**

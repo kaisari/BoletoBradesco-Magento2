@@ -16,9 +16,9 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper {
 
     public function getApiUrl() {
         if ($this->getConfig('sandbox')) {
-            return 'https://homolog.meiosdepagamentobradesco.com.br/apiboleto/transacao';
+            return 'https://homolog.meiosdepagamentobradesco.com.br';
         } else {
-            return 'https://meiosdepagamentobradesco.com.br/apiboleto/transacao';
+            return 'https://meiosdepagamentobradesco.com.br';
         }
     }
 

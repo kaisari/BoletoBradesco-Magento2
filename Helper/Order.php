@@ -110,7 +110,7 @@ class Order extends \Magento\Framework\App\Helper\AbstractHelper {
     }
 
     public function generate($data) {
-        $url = $this->helper()->getApiUrl();
+        $url = $this->helper()->getApiUrl() . '/apiboleto/transacao';
         $json = json_encode($data);
 
         //auth
@@ -127,7 +127,7 @@ class Order extends \Magento\Framework\App\Helper\AbstractHelper {
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POST, TRUE);
         curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
         curl_setopt($ch, CURLOPT_USERPWD, $AuthorizationHeader);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
