@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="kaisari_boletobradesco" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Boleto Bradesco</label>
+
+                <field id="heading" type="note" translate="label" sortOrder="0" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <frontend_model>Kaisari\BoletoBradesco\Block\Adminhtml\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Habilitado</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Título</label>
+                </field>
+                <field id="sandbox" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Modo de Testes</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="merchant_id" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Merchant ID</label>
+                </field>
+                <field id="secret" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Chave de Segurança</label>
+                </field>
+                <field id="beneficiario" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Nome do beneficiário</label>
+                </field>
+                <field id="mensagem" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Mensagem Boleto</label>
+                </field>
+                <field id="carteira" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Carteira</label>
+                </field>
+                <field id="days_due_date" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Dias para vencimento</label>
+                </field>
+                <field id="order_status" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Status Aguardando Pagamento</label>
+                    <source_model>Kaisari\BoletoBradesco\Model\Config\Source\Order\Status\Pendingpayment</source_model>
+                </field>
+                <field id="order_status_complete" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Status Pago</label>
+                    <source_model>Kaisari\BoletoBradesco\Model\Config\Source\Order\Status\Completepayment</source_model>
+                </field>
+                <field id="order_status_cancel" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Status Não Pago</label>
+                    <source_model>Kaisari\BoletoBradesco\Model\Config\Source\Order\Status\Cancelpayment</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
+
